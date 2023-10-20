@@ -1,1 +1,12 @@
-<%# Update me %><%= @monsters.inspect %>
+<h2>Monstruos y Sus Tweets</h2>
+
+<% @monsters.each do |monster| %>
+  <h3><%= monster.name %></h3>
+  <ul>
+    <% monster.tweets.each do |tweet| %>
+      <li><%= tweet.content %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+<%= link_to "Crear Monstruo", new_monster_path, class: "btn btn-primary" %>
